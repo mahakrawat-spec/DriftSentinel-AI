@@ -1,0 +1,34 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Testing and cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.streamlit/secrets.toml
+.env
+
+# Logs
+*.log
+
+# Temporary test CSV files
+/corrupted.csv
+/empty.csv
+/invalid_missing_column.csv
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
