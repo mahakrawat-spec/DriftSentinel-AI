@@ -2,15 +2,19 @@
 
 An intelligent ML monitoring system designed to detect data drift, identify anomalies, assess monitoring risk, and generate explainable alerts through an interactive dashboard.
 
+**Live Dashboard:** https://driftsentinel-ai.streamlit.app/
+
+**GitHub Repository:** https://github.com/mahakrawat-spec/DriftSentinel-AI
+
 ## Features
 
 - **Data Drift Detection:** Detects statistical changes between reference and production datasets.
 - **Anomaly Detection:** Identifies unusual production records using Isolation Forest.
 - **Risk Assessment:** Calculates a monitoring risk score using drift and anomaly results.
-- **Explainable Alerts:** Provides explanations for detected monitoring issues.
+- **Explainable Alerts:** Provides explanations and recommendations for detected monitoring issues.
 - **Interactive Dashboard:** Visualizes monitoring results using Streamlit and Plotly.
 - **Dataset Validation:** Handles missing columns, empty files, invalid values, and corrupted CSV files.
-- **Automated Testing:** Includes unit and pipeline tests for reliability.
+- **Automated Testing:** Includes 38 automated unit and pipeline tests.
 
 ## Tech Stack
 
@@ -34,6 +38,9 @@ DriftSentinel-AI/
 ├── .gitignore
 │
 ├── data/
+│   ├── generate_data.py
+│   ├── reference.csv
+│   └── production.csv
 │
 ├── src/
 │   ├── drift_detector.py
@@ -52,7 +59,7 @@ DriftSentinel-AI/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/mahakrawat-spec/DriftSentinel-AI.git
 cd DriftSentinel-AI
 ```
 
@@ -84,11 +91,19 @@ streamlit run app.py
 
 Open the local URL displayed in your terminal.
 
+## Generate Sample Datasets
+
+```bash
+python data/generate_data.py
+```
+
 ## Run Automated Tests
 
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+**Current test status:** 38 automated tests passed.
 
 ## How It Works
 
@@ -107,10 +122,15 @@ The current risk score is a heuristic monitoring indicator, not a calibrated pro
 
 ## Project Status
 
-Core monitoring pipeline, interactive dashboard, dataset validation, and automated tests are implemented.
-
-Deployment and further improvements are planned.
+- Core monitoring pipeline implemented.
+- Statistical drift detection implemented.
+- Anomaly detection implemented.
+- Risk assessment and explainable alerts implemented.
+- Interactive Streamlit dashboard deployed.
+- Dataset validation implemented.
+- 38 automated tests passed.
+- Live deployment available.
 
 ## Disclaimer
 
-DriftSentinel AI is a monitoring prototype intended for experimentation and educational use. Its alerts and risk scores should be interpreted alongside domain knowledge and further validation.
+DriftSentinel AI is a monitoring prototype intended for experimentation and educational use. Detected drift and anomalies do not automatically mean model performance has degraded. Alerts and risk scores should be interpreted alongside domain knowledge and further validation.
